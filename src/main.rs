@@ -35,13 +35,13 @@ impl Grid {
       }
       count
    }
-   pub fn get_cell(&self, x: i32, y: i32) -> CellState {
+   fn get_cell(&self, x: i32, y: i32) -> CellState {
       if x < 0 || x as usize >= self.width || y < 0 || y as usize >= self.height {
          return CellState::Dead;
       }
       self.grid[x as usize][y as usize]
    }
-   pub fn get_future_cell(&self, x: usize, y: usize) -> CellState {
+   fn get_future_cell(&self, x: usize, y: usize) -> CellState {
       match self.grid[x][y]{
          CellState::Dead => {
             if self.count_neighbors(x, y) == 3 {
