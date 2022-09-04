@@ -1,10 +1,4 @@
-use std::io::{stdout, Write};
-use crossterm::{
-   execute,
-   style::{Color, Print, ResetColor, SetBackgroundColor, SetForegroundColor},
-   ExecutableCommand, Result,
-   event,
-};
+
 /* implement conway's game of life using a state struct with a grid and a cell struct with a function
  * to get the next state, and a function to get number of alive neighbours.
  * use enum to describe a cell, whether it is alive or dead.
@@ -77,7 +71,6 @@ impl Grid {
       self.grid = new_grid.grid;
    }
    pub fn print_grid(&self) {
-      print!("{}{}Stuff", termion::clear::All, termion::cursor::Goto(1, 2));
       for j in 0i32..(self.width as i32){
          for i in 0i32..(self.height as i32){
             match self.get_cell(i, j){
