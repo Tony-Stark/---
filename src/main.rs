@@ -24,7 +24,7 @@ impl Grid {
          width,
       }
    }
-   pub fn count_neighbors(&self, x: usize, y: usize) -> usize {
+   fn count_neighbors(&self, x: usize, y: usize) -> usize {
       let mut count = 0;
       for i in 0..3 {
          for j in 0..3 {
